@@ -104,35 +104,29 @@
             background: rgba(255, 255, 255, 0.1);
         }
         
-        /* Mariposas más estilizadas */
+        /* Mariposas con emojis reales */
         .butterfly {
             position: absolute;
-            width: 20px;
-            height: 15px;
-            opacity: 0.6;
+            font-size: 20px;
+            opacity: 0.7;
             animation: flutter 4s ease-in-out infinite;
+            filter: hue-rotate(270deg) saturate(1.2);
         }
         
-        .butterfly::before,
-        .butterfly::after {
-            content: '';
+        /* Mariposas violetas adicionales */
+        .butterfly-violet {
             position: absolute;
-            background: radial-gradient(ellipse, #8a6bb8 30%, #b89ce8 60%, transparent 80%);
-            border-radius: 50%;
+            font-size: 24px;
+            opacity: 0.6;
+            animation: flutter-violet 5s ease-in-out infinite;
+            filter: hue-rotate(270deg) saturate(1.5) brightness(0.9);
         }
         
-        .butterfly::before {
-            width: 12px;
-            height: 10px;
-            top: 0;
-            left: 2px;
-        }
-        
-        .butterfly::after {
-            width: 8px;
-            height: 6px;
-            bottom: 2px;
-            left: 4px;
+        @keyframes flutter-violet {
+            0%, 100% { transform: translateY(0px) translateX(0px) rotate(0deg) scale(1); }
+            25% { transform: translateY(-12px) translateX(5px) rotate(3deg) scale(1.1); }
+            50% { transform: translateY(6px) translateX(-3px) rotate(-2deg) scale(0.9); }
+            75% { transform: translateY(-4px) translateX(6px) rotate(2deg) scale(1.05); }
         }
         
         .butterfly1 { top: 12%; left: 15%; animation-delay: 0s; }
@@ -141,6 +135,16 @@
         .butterfly4 { bottom: 15%; right: 15%; animation-delay: 0.8s; }
         .butterfly5 { top: 45%; left: 5%; animation-delay: 2.2s; }
         .butterfly6 { top: 65%; right: 10%; animation-delay: 1.2s; }
+        
+        /* Posiciones para mariposas violetas adicionales */
+        .butterfly-violet1 { top: 8%; right: 20%; animation-delay: 0.5s; }
+        .butterfly-violet2 { top: 35%; left: 3%; animation-delay: 2s; }
+        .butterfly-violet3 { top: 55%; right: 5%; animation-delay: 3.5s; }
+        .butterfly-violet4 { bottom: 40%; left: 12%; animation-delay: 1s; }
+        .butterfly-violet5 { bottom: 8%; right: 25%; animation-delay: 2.8s; }
+        .butterfly-violet6 { top: 75%; left: 8%; animation-delay: 4s; }
+        .butterfly-violet7 { top: 20%; left: 25%; animation-delay: 1.7s; }
+        .butterfly-violet8 { bottom: 25%; right: 8%; animation-delay: 3.2s; }
         
         @keyframes flutter {
             0%, 100% { transform: translateY(0px) translateX(0px) rotate(0deg); }
@@ -195,8 +199,8 @@
         /* Figura de la quinceañera más detallada */
         /* Container para la imagen de la quinceañera */
         .quinceañera-container {
-            width: 180px;
-            height: 180px;
+            width: 300px;
+            height: 300px;
             margin: 20px 0;
             position: relative;
             background: #e5e5e5;
@@ -212,8 +216,8 @@
         
         /* Imagen de la quinceañera */
         .quinceañera-image {
-            width: 140px;
-            height: 140px;
+            width: 280px;
+            height: 280px;
             object-fit: contain; /* Cambiado de 'cover' a 'contain' */
             object-position: center;
             border-radius: 50%;
@@ -336,13 +340,23 @@
     <div class="bg-flower bg-flower5"></div>
     <div class="bg-flower bg-flower6"></div>
     
-    <!-- Mariposas -->
-    <div class="butterfly butterfly1"></div>
-    <div class="butterfly butterfly2"></div>
-    <div class="butterfly butterfly3"></div>
-    <div class="butterfly butterfly4"></div>
-    <div class="butterfly butterfly5"></div>
-    <div class="butterfly butterfly6"></div>
+    <!-- Mariposas originales -->
+    <div class="butterfly butterfly1">🦋</div>
+    <div class="butterfly butterfly2">🦋</div>
+    <div class="butterfly butterfly3">🦋</div>
+    <div class="butterfly butterfly4">🦋</div>
+    <div class="butterfly butterfly5">🦋</div>
+    <div class="butterfly butterfly6">🦋</div>
+    
+    <!-- Mariposas violetas adicionales -->
+    <div class="butterfly-violet butterfly-violet1">🦋</div>
+    <div class="butterfly-violet butterfly-violet2">🦋</div>
+    <div class="butterfly-violet butterfly-violet3">🦋</div>
+    <div class="butterfly-violet butterfly-violet4">🦋</div>
+    <div class="butterfly-violet butterfly-violet5">🦋</div>
+    <div class="butterfly-violet butterfly-violet6">🦋</div>
+    <div class="butterfly-violet butterfly-violet7">🦋</div>
+    <div class="butterfly-violet butterfly-violet8">🦋</div>
     
     <!-- Hojas -->
     <div class="leaf leaf1"></div>
