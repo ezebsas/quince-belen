@@ -244,6 +244,52 @@
             50% { opacity: 1; transform: scale(1.2); }
         }
         
+        /* SECCIÓN INTERMEDIA - TEXTO */
+        .text-section {
+            min-height: 100vh;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            z-index: 10;
+            padding: 80px 20px;
+            background: rgba(255, 255, 255, 0.1);
+        }
+        
+        .text-content {
+            max-width: 600px;
+            text-align: justify;
+            color: #5d4178;
+            background: rgba(255, 255, 255, 0.85);
+            padding: 50px 40px;
+            border-radius: 25px;
+            box-shadow: 0 15px 40px rgba(122, 91, 163, 0.15);
+            backdrop-filter: blur(8px);
+        }
+        
+        .text-title {
+            font-family: 'Great Vibes', cursive;
+            font-size: 38px;
+            color: #8a6bb8;
+            text-align: center;
+            margin-bottom: 35px;
+            text-shadow: 0 2px 4px rgba(138, 107, 184, 0.2);
+        }
+        
+        .text-paragraph {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 19px;
+            line-height: 1.7;
+            color: #5d4178;
+            margin-bottom: 22px;
+            font-weight: 400;
+        }
+        
+        .text-paragraph:last-child {
+            margin-bottom: 0;
+        }
+        
         /* SECCIÓN DE DETALLES DEL EVENTO */
         .details-section {
             min-height: 100vh;
@@ -428,6 +474,17 @@
                 margin: 0 10px;
                 padding: 30px 25px;
             }
+            
+            .text-content {
+                margin: 0 10px;
+                padding: 40px 30px;
+            }
+            
+            .text-paragraph {
+                font-size: 18px;
+                margin-bottom: 20px;
+                line-height: 1.6;
+            }
         }
     </style>
 </head>
@@ -491,6 +548,19 @@
         </div>
     </section>
     
+    <!-- SECCIÓN INTERMEDIA - TEXTO -->
+    <section class="text-section">
+        <div class="text-content">
+            <div class="text-title">Una Nueva Etapa</div>
+            
+            <p class="text-paragraph">
+                Hay historias y personas que no voy a olvidar y recuerdos como este que siempre voy a guardar. Porque son parte de mí vida es mí deseo que compartan conmigo en este día tan especial
+            </p>
+            
+           
+        </div>
+    </section>
+    
     <!-- SECCIÓN DE DETALLES DEL EVENTO -->
     <section class="details-section">
         <div class="details-content">
@@ -498,20 +568,15 @@
             
             <div class="detail-item">
                 <div class="date-text">Septiembre 27</div>
-                <div class="time-text">21hs</div>
+                <div class="text-paragraph">21hs</div>
             </div>
             
             <div class="detail-item">
                 <div class="detail-label">Lugar</div>
-                <div class="address-text">Jujuy 1856 Pie Derqui</div>
+                <div class="text-paragraph">Jujuy 1856 Pie Derqui</div>
             </div>
             
-            <div class="detail-item">
-                <div class="detail-label">Confirmaciones</div>
-                <div class="rsvp-text">RSVP 1234 5678</div>
-            </div>
-            
-            <div class="thanks-text">Gracias</div>
+            <div class="thanks-text">Los espero</div>
         </div>
     </section>
 </body>
