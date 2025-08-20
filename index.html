@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mis 15 Años - Ana Belén</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;600;700&family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Great+Vibes&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Cormorant Garamond', serif;
+            background: 
+                radial-gradient(circle at 20% 30%, rgba(180, 156, 232, 0.3) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(200, 181, 235, 0.4) 0%, transparent 50%),
+                radial-gradient(circle at 40% 70%, rgba(160, 133, 214, 0.3) 0%, transparent 50%),
+                radial-gradient(circle at 90% 80%, rgba(220, 208, 255, 0.4) 0%, transparent 50%),
+                linear-gradient(135deg, #f0e6ff 0%, #e6d7ff 25%, #dcc8ff 50%, #e8ddff 75%, #f5f0ff 100%);
+            min-height: 100vh;
+            position: relative;
+            overflow-x: hidden;
+            overflow-y: auto; /* Permite scroll vertical */
+        }
+        
+        /* Flores de fondo más realistas */
+        .bg-flower {
+            position: absolute;
+            opacity: 0.15;
+        }
+        
+        .bg-flower::before {
+            content: '';
+            position: absolute;
+            width: 60px;
+            height: 60px;
+            background: radial-gradient(ellipse at center, #c8b5eb 20%, #e6d7ff 40%, transparent 70%);
+            border-radius: 50%;
+        }
+        
+        .bg-flower::after {
+            content: '';
+            position: absolute;
+            width: 40px;
+            height: 80px;
+            background: radial-gradient(ellipse at center, #b89ce8 30%, transparent 70%);
+            border-radius: 50%;
+            top: -10px;
+            left: 10px;
+            transform: rotate(45deg);
+        }
+        
+        .bg-flower1 {
+            top: 5%;
+            left: 10%;
+            transform: rotate(-20deg) scale(1.2);
+        }
+        
+        .bg-flower2 {
+            top: 15%;
+            right: 5%;
+            transform: rotate(60deg) scale(0.8);
+        }
+        
+        .bg-flower3 {
+            bottom: 20%;
+            left: 5%;
+            transform: rotate(120deg) scale(1.1);
+        }
+        
+        .bg-flower4 {
+            bottom: 10%;
+            right: 8%;
+            transform: rotate(-45deg) scale(0.9);
+        }
+        
+        .bg-flower5 {
+            top: 40%;
+            left: 2%;
+            transform: rotate(90deg) scale(0.7);
+        }
+        
+        .bg-flower6 {
+            top: 60%;
+            right: 3%;
+            transform: rotate(-90deg) scale(0.6);
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 400px;
+            min-height: 100vh;
+            margin: 0 auto;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 30px 20px;
+            background: rgba(255, 255, 255, 0.1);
+        }
+        
+        /* Mariposas más estilizadas */
+        .butterfly {
+            position: absolute;
+            width: 20px;
+            height: 15px;
+            opacity: 0.6;
+            animation: flutter 4s ease-in-out infinite;
+        }
+        
+        .butterfly::before,
+        .butterfly::after {
+            content: '';
+            position: absolute;
+            background: radial-gradient(ellipse, #8a6bb8 30%, #b89ce8 60%, transparent 80%);
+            border-radius: 50%;
+        }
+        
+        .butterfly::before {
+            width: 12px;
+            height: 10px;
+            top: 0;
+            left: 2px;
+        }
+        
+        .butterfly::after {
+            width: 8px;
+            height: 6px;
+            bottom: 2px;
+            left: 4px;
+        }
+        
+        .butterfly1 { top: 12%; left: 15%; animation-delay: 0s; }
+        .butterfly2 { top: 25%; right: 12%; animation-delay: 1.5s; }
+        .butterfly3 { bottom: 30%; left: 8%; animation-delay: 3s; }
+        .butterfly4 { bottom: 15%; right: 15%; animation-delay: 0.8s; }
+        .butterfly5 { top: 45%; left: 5%; animation-delay: 2.2s; }
+        .butterfly6 { top: 65%; right: 10%; animation-delay: 1.2s; }
+        
+        @keyframes flutter {
+            0%, 100% { transform: translateY(0px) translateX(0px) rotate(0deg); }
+            25% { transform: translateY(-8px) translateX(3px) rotate(2deg); }
+            50% { transform: translateY(4px) translateX(-2px) rotate(-1deg); }
+            75% { transform: translateY(-3px) translateX(4px) rotate(1deg); }
+        }
+        
+        .content {
+            text-align: center;
+            color: #5d4178;
+            position: relative;
+            z-index: 10;
+        }
+        
+        .header-text {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 26px;
+            font-weight: 300;
+            letter-spacing: 3px;
+            margin-bottom: -5px;
+            color: #6b4d8a;
+        }
+        
+        .age-number {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 85px;
+            font-weight: 500;
+            color: #7a5ba3;
+            line-height: 0.8;
+            margin: 5px 0;
+            text-shadow: 0 3px 8px rgba(122, 91, 163, 0.3);
+        }
+        
+        .anos-text {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 26px;
+            font-weight: 300;
+            letter-spacing: 3px;
+            margin-bottom: 10px;
+            color: #6b4d8a;
+        }
+        
+        .name-text {
+            font-family: 'Great Vibes', cursive;
+            font-size: 46px;
+            color: #8a6bb8;
+            margin: 15px 0 25px 0;
+            text-shadow: 0 2px 6px rgba(138, 107, 184, 0.25);
+        }
+        
+        /* Figura de la quinceañera más detallada */
+        /* Container para la imagen de la quinceañera */
+        .quinceañera-container {
+            width: 180px;
+            height: 180px;
+            margin: 20px 0;
+            position: relative;
+            background: #e5e5e5;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 
+                0 8px 25px rgba(122, 91, 163, 0.2),
+                inset 0 1px 3px rgba(255, 255, 255, 0.3);
+            overflow: hidden;
+        }
+        
+        /* Imagen de la quinceañera */
+        .quinceañera-image {
+            width: 140px;
+            height: 140px;
+            object-fit: contain; /* Cambiado de 'cover' a 'contain' */
+            object-position: center;
+            border-radius: 50%;
+            position: relative;
+            z-index: 2;
+            background: #e5e5e5; /* Mismo color de fondo para consistencia */
+        }
+        
+        /* Brillos en el vestido */
+        .sparkle {
+            position: absolute;
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 8px;
+            animation: twinkle 2.5s ease-in-out infinite;
+            pointer-events: none;
+        }
+        
+        .sparkle1 { top: 30%; left: 25%; animation-delay: 0s; }
+        .sparkle2 { top: 50%; right: 20%; animation-delay: 0.8s; }
+        .sparkle3 { bottom: 25%; left: 30%; animation-delay: 1.6s; }
+        .sparkle4 { bottom: 40%; right: 25%; animation-delay: 2.4s; }
+        .sparkle5 { top: 40%; left: 50%; animation-delay: 0.4s; }
+        .sparkle6 { bottom: 30%; left: 45%; animation-delay: 1.2s; }
+        
+        @keyframes twinkle {
+            0%, 100% { opacity: 0.3; transform: scale(0.8); }
+            50% { opacity: 1; transform: scale(1.2); }
+        }
+        
+        .date-text {
+            font-family: 'Great Vibes', cursive;
+            font-size: 34px;
+            color: #8a6bb8;
+            margin: 25px 0 8px 0;
+        }
+        
+        .time-text {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 20px;
+            font-weight: 400;
+            margin-bottom: 20px;
+            color: #6b4d8a;
+        }
+        
+        .address-text {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 15px;
+            font-weight: 300;
+            margin-bottom: 8px;
+            color: #5d4178;
+        }
+        
+        .rsvp-text {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 15px;
+            font-weight: 300;
+            margin-bottom: 25px;
+            color: #5d4178;
+        }
+        
+        .thanks-text {
+            font-family: 'Great Vibes', cursive;
+            font-size: 38px;
+            color: #8a6bb8;
+            margin-top: 15px;
+        }
+        
+        /* Hojas decorativas */
+        .leaf {
+            position: absolute;
+            width: 20px;
+            height: 12px;
+            background: linear-gradient(45deg, #a085d6 0%, #c8b5eb 100%);
+            border-radius: 0 100% 0 100%;
+            opacity: 0.4;
+        }
+        
+        .leaf::before {
+            content: '';
+            width: 1px;
+            height: 15px;
+            background: #a085d6;
+            position: absolute;
+            left: 50%;
+            top: -3px;
+            transform: translateX(-50%);
+        }
+        
+        .leaf1 {
+            top: 18%;
+            left: 12%;
+            transform: rotate(-30deg);
+        }
+        
+        .leaf2 {
+            top: 35%;
+            right: 8%;
+            transform: rotate(45deg);
+        }
+        
+        .leaf3 {
+            bottom: 25%;
+            left: 6%;
+            transform: rotate(70deg);
+        }
+        
+        .leaf4 {
+            bottom: 40%;
+            right: 12%;
+            transform: rotate(-60deg);
+        }
+    </style>
+</head>
+<body>
+    <!-- Flores de fondo -->
+    <div class="bg-flower bg-flower1"></div>
+    <div class="bg-flower bg-flower2"></div>
+    <div class="bg-flower bg-flower3"></div>
+    <div class="bg-flower bg-flower4"></div>
+    <div class="bg-flower bg-flower5"></div>
+    <div class="bg-flower bg-flower6"></div>
+    
+    <!-- Mariposas -->
+    <div class="butterfly butterfly1"></div>
+    <div class="butterfly butterfly2"></div>
+    <div class="butterfly butterfly3"></div>
+    <div class="butterfly butterfly4"></div>
+    <div class="butterfly butterfly5"></div>
+    <div class="butterfly butterfly6"></div>
+    
+    <!-- Hojas -->
+    <div class="leaf leaf1"></div>
+    <div class="leaf leaf2"></div>
+    <div class="leaf leaf3"></div>
+    <div class="leaf leaf4"></div>
+    
+    <div class="container">
+        <div class="content">
+            <div class="header-text">Mis</div>
+            <div class="age-number">15</div>
+            <div class="anos-text">Años</div>
+            
+            <div class="name-text">Ana Belén</div>
+            
+            <div class="quinceañera-container">
+                <!-- REEMPLAZA "tu-imagen.jpg" por la ruta de tu imagen -->
+                <img src="chica.jpeg" alt="Ana Belén Quinceañera" class="quinceañera-image">
+                
+                <!-- Sparkles opcionales sobre la imagen -->
+                <div class="sparkle sparkle1">✨</div>
+                <div class="sparkle sparkle2">✨</div>
+                <div class="sparkle sparkle3">✨</div>
+                <div class="sparkle sparkle4">✨</div>
+            </div>
+            
+            <div class="date-text">Septiembre 27</div>
+            <div class="time-text">21hs</div>
+            
+            <div class="address-text">Jujuy 1856 Pie Derqui</div>
+            <div class="rsvp-text">RSVP 1234 5678</div>
+            
+            <div class="thanks-text">Gracias</div>
+        </div>
+    </div>
+</body>
+</html>
