@@ -258,14 +258,16 @@
         }
         
         .text-content {
-            max-width: 600px;
+            max-width: 700px;
+            width: 90%;
             text-align: justify;
             color: #5d4178;
-            background: rgba(255, 255, 255, 0.85);
+            background: rgba(255, 255, 255, 0.95);
             padding: 50px 40px;
             border-radius: 25px;
             box-shadow: 0 15px 40px rgba(122, 91, 163, 0.15);
             backdrop-filter: blur(8px);
+            border: 1px solid rgba(138, 107, 184, 0.1);
         }
         
         .text-title {
@@ -305,10 +307,11 @@
         }
         
         .details-content {
-            max-width: 400px;
+            max-width: 500px;
+            width: 90%;
             text-align: center;
             color: #5d4178;
-            background: rgba(255, 255, 255, 0.8);
+            background: rgba(255, 255, 255, 0.95);
             padding: 40px;
             border-radius: 20px;
             box-shadow: 0 10px 30px rgba(122, 91, 163, 0.2);
@@ -377,6 +380,72 @@
             font-size: 38px;
             color: #8a6bb8;
             margin-top: 15px;
+        }
+        
+        /* SECCIÓN DE MAPA */
+        .map-section {
+            min-height: 70vh;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            z-index: 10;
+            padding: 60px 20px;
+        }
+        
+        .map-content {
+            max-width: 700px;
+            width: 90%;
+            text-align: center;
+            color: #5d4178;
+            background: rgba(255, 255, 255, 0.95);
+            padding: 40px;
+            border-radius: 25px;
+            box-shadow: 0 15px 40px rgba(122, 91, 163, 0.15);
+            border: 1px solid rgba(138, 107, 184, 0.1);
+        }
+        
+        .map-title {
+            font-family: 'Great Vibes', cursive;
+            font-size: 42px;
+            color: #8a6bb8;
+            margin-bottom: 20px;
+            text-shadow: 0 2px 4px rgba(138, 107, 184, 0.2);
+        }
+        
+        .map-address {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 22px;
+            font-weight: 400;
+            color: #6b4d8a;
+            margin-bottom: 30px;
+        }
+        
+        .map-container {
+            width: 100%;
+            height: 400px;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 15px 40px rgba(122, 91, 163, 0.2);
+            background: #e5e5e5;
+            border: 3px solid rgba(138, 107, 184, 0.3);
+        }
+        
+        .map-iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+            filter: grayscale(20%) sepia(10%) hue-rotate(270deg) saturate(1.1);
+        }
+        
+        .map-instructions {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 16px;
+            color: #5d4178;
+            margin-top: 20px;
+            font-style: italic;
         }
         
         /* Hojas decorativas */
@@ -478,12 +547,36 @@
             .text-content {
                 margin: 0 10px;
                 padding: 40px 30px;
+                max-width: 650px;
+            }
+            
+            .details-content {
+                margin: 0 10px;
+                padding: 30px 25px;
+                max-width: 450px;
+            }
+            
+            .map-content {
+                padding: 30px 25px;
+                max-width: 650px;
             }
             
             .text-paragraph {
                 font-size: 18px;
                 margin-bottom: 20px;
                 line-height: 1.6;
+            }
+            
+            .map-container {
+                height: 300px;
+            }
+            
+            .map-title {
+                font-size: 36px;
+            }
+            
+            .map-address {
+                font-size: 20px;
             }
         }
     </style>
@@ -561,6 +654,33 @@
         </div>
     </section>
     
+    <!-- SECCIÓN DE MAPA -->
+    <section class="map-section">
+        <div class="map-content">
+            <div class="map-title">Ubicación</div>
+            <div class="map-address">Jujuy 1856, Presidente Derqui</div>
+            
+            <div class="map-container">
+                <!-- 
+                INSTRUCCIONES PARA AGREGAR EL MAPA:
+                1. Ve a Google Maps
+                2. Busca "Jujuy 1856, Pie Derqui"
+                3. Haz clic en "Compartir"
+                4. Selecciona "Incorporar un mapa"
+                5. Copia el código iframe
+                6. Reemplaza el contenido entre las etiquetas del div map-container
+                -->
+                <iframe 
+                    class="map-iframe"
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1420.8506056023618!2d-58.833572580881835!3d-34.489222969255536!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bc9bdef74dac43%3A0xed20e2d98ae45b0d!2sCentro%20de%20Jubilados%20y%20Pensionados%20Siglo%20XX!5e0!3m2!1sen!2sar!4v1755716747900!5m2!1sen!2sar" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    loading="lazy" 
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
+            
+        </div>
+    </section>
+
     <!-- SECCIÓN DE DETALLES DEL EVENTO -->
     <section class="details-section">
         <div class="details-content">
@@ -568,14 +688,9 @@
             
             <div class="detail-item">
                 <div class="date-text">Septiembre 27</div>
-                <div class="text-paragraph">21hs</div>
+                <div class="date-text">21hs</div>
             </div>
-            
-            <div class="detail-item">
-                <div class="detail-label">Lugar</div>
-                <div class="text-paragraph">Jujuy 1856 Pie Derqui</div>
-            </div>
-            
+                    
             <div class="thanks-text">Los espero</div>
         </div>
     </section>
